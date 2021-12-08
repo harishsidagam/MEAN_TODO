@@ -1,0 +1,57 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch">
+  <div  fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="400px">
+
+    <mat-toolbar  color="primary" style="max-height:50%;">
+       <span class="vin">ToDo List</span>
+       <span style=" flex: 1 1 auto"></span>
+       <mat-icon>person</mat-icon>&nbsp;&nbsp;
+       <button mat-icon-button (click)="logout()"><mat-icon>logout</mat-icon></button>
+
+       <!-- <mat-form-field  appearance="outline" style="width:15%;border:20px;">
+    <mat-icon matSuffix>search</mat-icon>
+    <input matInput type="search" placeholder="search here" style="color:black;background-color:white;" >
+    </mat-form-field> -->
+
+</mat-toolbar>
+</div>
+
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card style="width:50%">
+
+          <mat-form-field  appearance="outline" style="width:50%;margin-left:200px;">
+            <mat-label>TODO</mat-label>
+            <input matInput placeholder="Enter todo" [(ngModel)]="inputFieldValue" >
+          </mat-form-field> &nbsp;&nbsp;
+
+
+          <button mat-raised-button style="background-color:#5cb85c;"(click)="add()">Add</button>
+
+
+                <table class="users">
+                  <th>S.NO</th>
+                  <th>Todolist</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
+                  <tbody *ngFor='let row of tableData ;let i=index'>
+                  <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{row}}</td>
+                    <td><button mat-icon-button><mat-icon (click)="delete(index)">delete</mat-icon></button></td>
+                    <td><button mat-icon-button><mat-icon (click)="edit()">edit</mat-icon></button></td>
+
+
+                  </tr>
+                  </tbody>
+                  </table>
+
+
+      </mat-card>
+
+
+
+    </div>
+
+
+  </div>
