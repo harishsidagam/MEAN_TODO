@@ -69,14 +69,14 @@ VerifyToken(){
       use = res;
       this.validate = use.message
         if(use.success==true){
-          let user = use.obj.user.email
-          localStorage.setItem('user',user)
+          let user = use.obj.user
+          localStorage.setItem('email',user.email)
+          localStorage.setItem('username',user.username)
+          console.log(user.username)
           this.router.navigate(["todo"]);
-          console.log("------",user)
+          return true
         }else{
-          this.errMessage = use.message
-          console.log(this.errMessage)
-
+         return false
         }
       });
     }

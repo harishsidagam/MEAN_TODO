@@ -21,7 +21,7 @@ verifyJwt = async function (req, res, next) {
   return jwt.verify(token, secretKey, function (err, decoded) {
     if (err) {
     const error= err; 
-    res.status(501).json({ "success":false,error});
+    res.status(400).json({ "success":false,error});
     } else {
      
     next();

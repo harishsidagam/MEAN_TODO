@@ -3,14 +3,12 @@
 
     <mat-toolbar  color="primary" style="max-height:50%;">
        <span class="vin">ToDo List</span>
-       <span style=" flex: 1 1 auto"></span>
-       <mat-icon>person</mat-icon>&nbsp;&nbsp;
+       <span style=" flex: 1 0.5 auto"></span>
+       <button mat-icon-button (click)="profile()"><mat-icon>person</mat-icon>
+      </button>{{userDetails}}
+
        <button mat-icon-button (click)="logout()"><mat-icon>logout</mat-icon></button>
 
-       <!-- <mat-form-field  appearance="outline" style="width:15%;border:20px;">
-    <mat-icon matSuffix>search</mat-icon>
-    <input matInput type="search" placeholder="search here" style="color:black;background-color:white;" >
-    </mat-form-field> -->
 
 </mat-toolbar>
 </div>
@@ -38,7 +36,7 @@
                   <tr>
                     <td>{{i+1}}</td>
                     <td>{{row}}</td>
-                    <td><button mat-icon-button><mat-icon (click)="delete(index)">delete</mat-icon></button></td>
+                    <td><button mat-icon-button><mat-icon (click)="delete(i)">delete</mat-icon></button></td>
                     <td><button mat-icon-button><mat-icon (click)="edit()">edit</mat-icon></button></td>
 
 

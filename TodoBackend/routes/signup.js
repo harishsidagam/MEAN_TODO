@@ -73,6 +73,14 @@ router.post('/register', function(req, res, next) {
     });
   }     
 );
-
+router.get("/get/register",(req,res)=>{
+  try{
+    let result = User.find()
+    res.status(201).json({ success: true, list: response });
+  } catch (err) {
+    res.status(501).json({ success: false, message: err });
+  }
+  
+});
 
 module.exports = router;

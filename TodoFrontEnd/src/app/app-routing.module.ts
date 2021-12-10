@@ -1,3 +1,5 @@
+import { DialogComponent } from './components/dialog/dialog.component';
+import { AuthGuard } from './guards/authguard.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgotComponent } from './components/forgot/forgot.component';
@@ -11,6 +13,7 @@ const routes: Routes = [
     path:'',
     redirectTo:'login',
     pathMatch:"full"
+
   },
   {
     path:"register",
@@ -22,7 +25,8 @@ const routes: Routes = [
   },
   {
     path:"todo",
-    component:TodoComponent
+    component:TodoComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"forgot",
@@ -35,6 +39,10 @@ const routes: Routes = [
   {
     path:"confirm/:email/:token",
     component:LoginComponent
+  },{
+    path:"dialog",
+    component:DialogComponent
+
   }
 ];
 

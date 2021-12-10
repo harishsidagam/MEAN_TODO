@@ -1,4 +1,4 @@
-<div fxLayout="main wrap" fxLayoutAlign="start stretch"
+<div fxLayout="main wrap" fxLayoutAlign="center center"
   style="background-image: url('/../assets/images/bg (1).jpg'); height: 100%;">
   <mat-card
     style="width:100%; margin-top:17%; margin-left: 35%; margin-right: 35%; margin-bottom: 22%; text-align: center;">
@@ -20,6 +20,9 @@
 
 
       <button mat-raised-button style="background-color: #5cb85c; margin-top:2%;" class="btn" (click)="submitform()">Submit</button>
-    </form>
+    </form><br>
+    <div class="user" fxLayout="row" fxLayoutAlign="center center">
+      <p style='margin-top:1%'>Existing User?&nbsp;&nbsp;<a style="color: #5cb85c" routerLink="/login">Login</a></p>
+    </div>
   </mat-card>
 </div>

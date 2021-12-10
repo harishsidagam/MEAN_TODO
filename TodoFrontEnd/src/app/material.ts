@@ -17,6 +17,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -25,7 +26,7 @@ import { MatNativeDateModule } from "@angular/material/core";
 
     exports:[MatCardModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatTabsModule,MatToolbarModule
              ,MatSidenavModule,MatIconModule,MatListModule,MatGridListModule,MatSelectModule,MatTooltipModule
-             ,MatTableModule,MatCheckboxModule,MatSlideToggleModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule ]
+             ,MatTableModule,MatCheckboxModule,MatSlideToggleModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule,MatDialogModule ]
 })
 
 

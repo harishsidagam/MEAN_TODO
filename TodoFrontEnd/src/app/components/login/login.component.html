@@ -1,8 +1,8 @@
-<div fxLayout="main wrap" fxLayoutAlign="start stretch"
+<div fxLayout="main wrap" fxLayoutAlign="center center"
   style="background-image: url('/../assets/images/bg (1).jpg'); height: 100%;">
   <mat-card
     style="width:100%; margin-top:12%; margin-left: 35%; margin-right: 35%; margin-bottom: 22%; text-align: center;">
-    <mat-card-title style="margin-top:5%;">LOGIN FORM</mat-card-title>
+    <mat-card-title style="margin-top:5%;">LOGIN</mat-card-title>
 
 
 
@@ -20,8 +20,10 @@
         <mat-form-field style="width:70%">
           <mat-label for="password">Password:</mat-label>
           <mat-icon matPrefix>lock</mat-icon>
-          <input class="pointer" matInput type="password" [type]="hide1 ? 'password' : 'text'"  formControlName="password" >
-          <mat-icon class="icon-size" matSuffix (click)="hide1 = !hide1" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input class="pointer" matInput type="password" [type]="hide1 ? 'password' : 'text'"
+            formControlName="password">
+          <mat-icon class="icon-size" matSuffix (click)="hide1 = !hide1">{{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
           <mat-error *ngIf="password.touched && password.invalid">
             Enter the Valid Password
           </mat-error>

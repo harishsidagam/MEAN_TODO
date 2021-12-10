@@ -1,7 +1,9 @@
+import { DialogComponent } from './../dialog/dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { BackendServiceService } from 'src/app/service/backend-service.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -13,8 +15,9 @@ export class RegisterComponent implements OnInit {
   form:any;
   hide = true;
   hide1 = true;
+  dialogRef:any;
 
-  constructor(public router:Router,private fb:FormBuilder, private backend:BackendServiceService) { }
+  constructor(public router:Router,private fb:FormBuilder, private backend:BackendServiceService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.formbuilder()
@@ -45,13 +48,20 @@ get username(){
     obj.username =temp.username
     obj.email = temp.email
     obj.password = temp.password
-    this.backend.register(obj).subscribe( async(data)=>{
-      if(data==true){
+    this.backend.register(obj).subscribe( async(res)=>{
+
+      if(res==true){
+        console.log(res)
+        const dialogRef = this.dialog.open(DialogComponent,{
+          data:{msg:res}
+        });
+
+
         this.form.reset()
       }
     });
 
-    console.log(this.form.value);
+
     this.router.navigate(['login'])
 
 

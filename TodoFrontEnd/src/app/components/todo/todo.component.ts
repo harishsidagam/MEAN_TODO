@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-todo',
@@ -17,29 +16,36 @@ export class TodoComponent implements OnInit {
 
 index:any;
   del: any;
+userDetails:any
 
   constructor(public router:Router) { }
 
   ngOnInit(): void {
+    this.userDetails = localStorage.getItem('username')
   }
+
   add(){
 
       this.tableData.push(this.inputFieldValue);
       return
 
     }
-  delete(index:any){
+  delete(i:any){
     this.del=this.tableData
-    this.del.removeAt(index)
+    this.del.splice(i,1)
    }
 
 
   edit(){
 
   }
+  profile(){
+
+  }
   logout(){
     this.router.navigate(["/login"])
     localStorage.clear();
   }
+
 
 }

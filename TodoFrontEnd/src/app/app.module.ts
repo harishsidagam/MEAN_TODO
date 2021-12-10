@@ -1,4 +1,4 @@
-import { AuthguardGuard } from './guards/authguard.guard';
+import { AuthGuard } from './guards/authguard.guard';
 import { BackendServiceService } from './service/backend-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +16,8 @@ import { LoginComponent } from './components/login/login.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ResetComponent } from './components/reset/reset.component';
     LoginComponent,
     TodoComponent,
     ForgotComponent,
-    ResetComponent
+    ResetComponent,
+    DialogComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { ResetComponent } from './components/reset/reset.component';
 
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  providers: [BackendServiceService,AuthguardGuard],
+  providers: [BackendServiceService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
